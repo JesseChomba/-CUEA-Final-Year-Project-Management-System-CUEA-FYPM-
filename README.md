@@ -153,7 +153,7 @@ cuea-fypm/
 ├── alter_schema.php                # One-time migration: nullable file_path, student_text, etc.
 ├── reset_admin.php                 # ⚠️ Dev utility: resets coordinator password
 ├── test_db.php                     # ⚠️ Dev utility: verifies DB connection and lists tables
-└── context.py                      # Dev utility: generates context.json for documentation
+└── 
 ```
 
 ---

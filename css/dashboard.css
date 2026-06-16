@@ -96,6 +96,36 @@
   box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.22), 0 0 14px rgba(212, 160, 23, 0.55);
 }
 
+/* Help & Support button (below nav, above footer) */
+.sidebar-help-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 16px 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid rgba(212, 160, 23, 0.28);
+  color: #D4A017;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.sidebar-help-btn:hover {
+  background: rgba(212, 160, 23, 0.22);
+  color: #f0b92a;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.sidebar-help-btn svg {
+  flex-shrink: 0;
+}
+
+
 .sidebar-footer {
   padding: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);

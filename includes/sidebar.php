@@ -114,6 +114,19 @@ function renderSidebar(array $user, string $activeKey = ''): void {
         <?php foreach ($items as $item) renderNavItem($item, $activeKey); ?>
       </nav>
 
+      <!-- Help Button -->
+      <a href="mailto:itsupport@cuea.edu?subject=Inquiry%20on%20FYPMS"
+         class="sidebar-help-btn"
+         title="Contact IT Support"
+         aria-label="Get Help" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <span class="nav-label">Help &amp; Support</span>
+      </a>
+
       <div class="sidebar-footer">
         <img src="https://ui-avatars.com/api/?name=<?php echo $avatarName; ?>&background=D4A017&color=1A1A1A" alt="<?php echo htmlspecialchars($fullName, ENT_QUOTES, 'UTF-8'); ?>" class="avatar">
         <div class="user-info">

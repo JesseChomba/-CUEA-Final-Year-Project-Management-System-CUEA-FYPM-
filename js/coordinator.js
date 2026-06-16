@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let manualTransferPage = 1;
     let templatesCache = [];
 
-    // ── Tab Switching ─────────────────────────────────────────
+    //  Tab Switching 
     const navItems = document.querySelectorAll('.sidebar-nav .nav-item[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (requestedItem) requestedItem.click();
     }
 
-    // ── Password Visibility Toggle ────────────────────────────
+    //  Password Visibility Toggle 
     const toggleCuPwd = document.getElementById('toggleCuPwd');
     const cuPwdInput = document.getElementById('cu_password');
     const cuEyeIcon = document.getElementById('cuEyeIcon');
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Initial Load Data ─────────────────────────────────────
+    //  Initial Load Data 
     loadCohorts();
     loadOverviewFilters();
     loadMetrics();
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ── Activity Logs (collapsible + paginated) ───────────────
+    //  Activity Logs (collapsible + paginated) 
     let allLogsCache_coord = [];
     let logsPage_coord = 1;
     const LOGS_PER_PAGE = 10;

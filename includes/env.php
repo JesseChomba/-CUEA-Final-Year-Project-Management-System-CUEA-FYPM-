@@ -1,6 +1,8 @@
 <?php
 /**
- * Lightweight .env loader for local PHP/XAMPP deployments.
+ * .env loader for this project loads the environment variables from a .env file located in the project root directory. It provides two functions:
+ * - loadEnv(): Loads the environment variables from the .env file into the PHP environment.
+ * - envValue($key, $default): Retrieves the value of an environment variable, returning a default value if the variable is not set.
  */
 
 function loadEnv(string $path = __DIR__ . '/../.env'): void {

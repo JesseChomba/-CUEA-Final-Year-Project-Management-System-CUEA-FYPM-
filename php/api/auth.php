@@ -15,7 +15,7 @@ require_once '../../includes/schema.php';
 require_once '../../includes/audit.php';
 require_once '../../includes/mailer.php';
 
-// ── CORS & session setup ──────────────────────────────────────────────────
+//  CORS & session setup 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -43,7 +43,7 @@ function generateTemporaryPassword(int $length = 12): string {
     return $password;
 }
 
-// ── LOGIN ─────────────────────────────────────────────────────────────────
+//  LOGIN 
 if ($method === 'POST' && $action === 'login') {
     $universityId = sanitize($body['university_id'] ?? '');
     $password     = $body['password'] ?? '';
@@ -103,7 +103,7 @@ if ($method === 'POST' && $action === 'login') {
     jsonResponse(401, 'Invalid University ID or password.');
 }
 
-// ── LOGOUT ────────────────────────────────────────────────────────────────
+//  LOGOUT 
 if ($method === 'POST' && $action === 'logout') {
     $_SESSION = [];
     if (ini_get('session.use_cookies')) {
@@ -116,7 +116,7 @@ if ($method === 'POST' && $action === 'logout') {
     jsonResponse(200, 'Logged out successfully.');
 }
 
-// ── KEEP SESSION ALIVE ───────────────────────────────────────────────────
+//  KEEP SESSION ALIVE 
 if (($method === 'GET' || $method === 'POST') && $action === 'keep_alive') {
     if (empty($_SESSION['user_id'])) {
         jsonResponse(401, 'Your session has expired. Please log in again.', ['reason' => 'session_expired']);
@@ -125,7 +125,7 @@ if (($method === 'GET' || $method === 'POST') && $action === 'keep_alive') {
     jsonResponse(200, 'Session extended.', ['expires_in' => 900]);
 }
 
-// ── SESSION CHECK ──────────────────────────────────────────────────────────
+//  SESSION CHECK 
 if ($method === 'GET' && $action === 'session') {
     if (empty($_SESSION['user_id'])) {
         jsonResponse(401, 'Your session has expired. Please log in again.', ['reason' => 'session_expired']);
@@ -156,7 +156,7 @@ if ($method === 'GET' && $action === 'session') {
     jsonResponse(200, 'Authenticated', $user);
 }
 
-// ── FORGOT PASSWORD ───────────────────────────────────────────────────────
+//  FORGOT PASSWORD 
 if ($method === 'POST' && $action === 'forgot_password') {
     $identifier = sanitize($body['identifier'] ?? '');
     if ($identifier === '') {
@@ -207,7 +207,7 @@ if ($method === 'POST' && $action === 'forgot_password') {
     }
 }
 
-// ── UPDATE PROFILE ──────────────────────────────────────────────────────────
+//  UPDATE PROFILE
 if ($method === 'POST' && $action === 'update_profile') {
     if (empty($_SESSION['user_id'])) {
         jsonResponse(401, 'Not authenticated.');
@@ -236,5 +236,5 @@ if ($method === 'POST' && $action === 'update_profile') {
     jsonResponse(200, 'Profile updated successfully.');
 }
 
-// ── FALLBACK ──────────────────────────────────────────────────────────────
+//  FALLBACK 
 jsonResponse(400, 'Unknown action.');

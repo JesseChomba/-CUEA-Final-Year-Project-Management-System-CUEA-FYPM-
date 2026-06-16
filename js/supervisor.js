@@ -23,7 +23,7 @@ window.fetch = async function () {
 
 document.addEventListener('DOMContentLoaded', async () => {
     let superviseesCache = [];
-    // ── Tab Switching ─────────────────────────────────────────
+    //  Tab Switching 
     const navItems = document.querySelectorAll('.sidebar-nav .nav-item[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (requestedItem) requestedItem.click();
     }
 
-    // ── Initial Load Data ─────────────────────────────────────
+    //  Initial Load Data 
     const sessionRes = await fetch('php/api/auth.php?action=session');
     const sessionData = await sessionRes.json();
     const supName = sessionData.data.full_name || 'Supervisor';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('submissionsContainer').innerHTML = '<p class="text-muted">Select a project above to view submissions.</p>';
     });
 
-    // ── Populate supervisee cohort filter ─────────────────────
+    // Populate supervisee cohort filter 
     (async function loadSuperviseeCohortFilter() {
         try {
             const res = await fetch('php/api/supervisor_api.php?action=get_cohorts');
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // ── Activity Logs (collapsible + paginated) ───────────────
+    //  Activity Logs (collapsible + paginated) 
     let allLogsCache_sup = [];
     let logsPage_sup = 1;
     const LOGS_PER_PAGE_SUP = 10;
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // ── Load Submissions ──────────────────────────────────────
+    //  Load Submissions 
     document.getElementById('projectSelect')?.addEventListener('change', async (e) => {
         const pId = e.target.value;
         const container = document.getElementById('submissionsContainer');
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // ── Submit Feedback ───────────────────────────────────────
+    //  Submit Feedback 
     function attachGradingHandlers() {
         document.querySelectorAll('.grading-form').forEach(form => {
             form.addEventListener('submit', async (e) => {
@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // ── Sub-Milestone Management ──────────────────────────────
+    //  Sub-Milestone Management 
     loadMilestoneCohorts();
 
     async function loadMilestoneCohorts() {

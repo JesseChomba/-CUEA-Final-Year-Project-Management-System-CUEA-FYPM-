@@ -5,9 +5,9 @@
 
 'use strict';
 
-/* ─────────────────────────────────────────────────────────
+/* 
    UTILITIES
-───────────────────────────────────────────────────────── */
+ */
 function showAlert(id, type, message) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -29,9 +29,9 @@ function setLoading(btnId, loading) {
   else btn.classList.remove('btn-loading');
 }
 
-/* ─────────────────────────────────────────────────────────
+/* 
    LOGIN PAGE
-───────────────────────────────────────────────────────── */
+ */
 (function initLogin() {
   const form = document.getElementById('loginForm');
   if (!form) return;  // Not on login page
@@ -48,7 +48,7 @@ function setLoading(btnId, loading) {
     showAlert('loginAlert', reason === 'logged_out' ? 'success' : 'info', reasonMessages[reason]);
   }
 
-  // ── Password show/hide toggle ──────────────────────────
+  //  Password show/hide toggle 
   const togglePwd  = document.getElementById('togglePwd');
   const pwdInput   = document.getElementById('loginPassword');
   const eyeIcon    = document.getElementById('eyeIcon');
@@ -64,7 +64,7 @@ function setLoading(btnId, loading) {
     });
   }
 
-  // ── Login submit ──────────────────────────────────────
+  //  Login submit 
   form.addEventListener('submit', handleLogin);
 
   async function handleLogin(e) {
@@ -118,15 +118,11 @@ function setLoading(btnId, loading) {
     }
   }
 
-  // ── Clear error on input ──────────────────────────────
+  //  Clear error on input 
   ['universityId', 'loginPassword'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener('input', () => hideAlert('loginAlert'));
   });
 })();
 
-
-/* ─────────────────────────────────────────────────────────
-   END OF AUTH JS (Registration removed)
-───────────────────────────────────────────────────────── */
 

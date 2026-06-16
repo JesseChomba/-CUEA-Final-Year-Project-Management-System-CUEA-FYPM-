@@ -15,9 +15,9 @@ require_once __DIR__ . '/includes/sidebar.php';
 </head>
 <body class="dashboard-layout">
 
-  <!-- ── SIDEBAR NAVIGATION ────────────────────────────────── -->
+  <!--  SIDEBAR NAVIGATION  -->
   <?php renderSidebar($currentUser, 'dashboard'); ?>
-<!-- ── MAIN CONTENT ──────────────────────────────────────── -->
+<!--  MAIN CONTENT  -->
   <div class="main-wrapper">
     <header class="top-bar">
       <div class="top-bar-title">Final Year Project Management System</div>
@@ -34,16 +34,7 @@ require_once __DIR__ . '/includes/sidebar.php';
              <h4 style="margin:0 0 10px 0; padding-bottom:8px; border-bottom:1px solid var(--color-border); font-size: 0.9rem;">Notifications</h4>
              <div id="notifList" style="max-height: 300px; overflow-y: auto;"></div>
           </div>
-        </div>
-        <button class="nav-icon-btn" title="Help Center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-          </svg>
-          <span style="font-size: 0.85rem; font-weight: 600; margin-left: 6px;">Help</span>
-        </button>
-      </div>
+        
     </header>
 
     <main class="content-body">

@@ -42,9 +42,9 @@ require_once __DIR__ . '/includes/sidebar.php';
   </head>
 <body class="dashboard-layout">
 
-  <!-- ── SIDEBAR NAVIGATION ────────────────────────────────── -->
+  <!--  SIDEBAR NAVIGATION  -->
   <?php renderSidebar($currentUser, 'overview'); ?>
-<!-- ── MAIN CONTENT ──────────────────────────────────────── -->
+<!--MAIN CONTENT  -->
   <div class="main-wrapper">
     <header class="top-bar">
       <div class="top-bar-title">Admin Hub</div>

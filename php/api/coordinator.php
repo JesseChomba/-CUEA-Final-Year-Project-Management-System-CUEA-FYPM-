@@ -457,8 +457,7 @@ try {
                 "  Temporary Password: {$password}\n" .
                 "  Role:              {$roleLabel}\n\n" .
                 "Please log in and change your password as soon as possible.\n" .
-                "Login at: http://localhost:8000/\n\n" .
-                "If you have trouble accessing your account, contact your coordinator.\n\n" .
+                "If you have trouble accessing your account, contact your IT Support/the coordinator.\n\n" .
                 "Best regards,\nCUEA FYPM Team";
             sendSystemEmail($email, $name, 'Welcome to CUEA FYPM – Your Account is Ready', $welcomeBody);
         }
