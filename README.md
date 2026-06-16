@@ -173,7 +173,7 @@ cuea-fypm/
 ### 1. Clone or copy the project
 
 ```bash
-git clone https://github.com/your-username/cuea-fypm.git
+git clone https://github.com/JesseChomba/-CUEA-Final-Year-Project-Management-System-CUEA-FYPM-.git
 # or extract the project archive into:
 # Windows: C:/xampp/htdocs/cuea-fypm/
 # Linux:   /opt/lampp/htdocs/cuea-fypm/

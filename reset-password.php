@@ -24,7 +24,7 @@ require_once __DIR__ . '/includes/helpers.php';
       </div>
       <div class="auth-quote-area">
         <div class="auth-quote-marks">&ldquo;</div>
-        <blockquote class="auth-quote">Password recovery keeps your project records protected.</blockquote>
+        <blockquote class="auth-quote">Password recovery.</blockquote>
       </div>
     </div>
     <div class="auth-right">

@@ -700,7 +700,7 @@ try {
         // Auto-complete new supervisor's sub-milestones where parent is already done
         autoCompleteTransferredSubMilestones($db, (int)$projectId, (int)$supId);
 
-        // ── Notifications & emails ───────────────────────────────────
+        //  Notifications & emails 
         $stmtProj = $db->prepare('SELECT p.student_id, p.title, u.full_name AS student_name, u.email AS student_email FROM projects p JOIN users u ON p.student_id = u.user_id WHERE p.project_id = ? LIMIT 1');
         $stmtProj->execute([$projectId]);
         $projInfo = $stmtProj->fetch();
@@ -785,7 +785,7 @@ try {
         // Auto-complete new supervisor's sub-milestones where parent is already done
         autoCompleteTransferredSubMilestones($db, (int)$projectId, (int)$supId);
 
-        // ── In-app notification + emails ─────────────────────────────
+        //  In-app notification + emails 
         $studentMsg = 'Your project has been transferred to a new supervisor by the Coordinator.';
         $notifStmt = $db->prepare("INSERT INTO notifications (user_id, type, message) VALUES (?, 'assignment', ?)");
         $notifStmt->execute([$project['student_id'], $studentMsg]);
@@ -952,7 +952,7 @@ try {
             // Auto-complete new supervisor's sub-milestones where parent is already done
             autoCompleteTransferredSubMilestones($db, (int)$request['project_id'], (int)$targetSupervisor);
 
-            // ── Emails for approved transfer request ─────────────────
+            //  Emails for approved transfer request 
             // Email – student
             if ($studentInfo && !empty($studentInfo['student_email']) && $newSup2) {
                 $sb =
