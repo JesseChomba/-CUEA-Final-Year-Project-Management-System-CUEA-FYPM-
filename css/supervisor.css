@@ -135,6 +135,12 @@
   gap: 32px;
 }
 
+.selection-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 /*  Filters  */
 .filter-bar {
   display: flex;
@@ -213,8 +219,8 @@
 }
 
 .action-btn {
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
   background: none;
@@ -336,6 +342,186 @@
 
 .confirm-check {
   margin-bottom: 20px;
+}
+
+.faculty-pagination {
+  padding: 16px 20px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination-controls,
+.selection-footer-links {
+  display: flex;
+  gap: 8px;
+}
+
+.selection-footer {
+  margin-top: 60px;
+  padding: 40px;
+  border-top: 1px solid var(--color-border);
+  background: #fff;
+}
+
+.selection-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 0;
+}
+
+.selection-footer-links {
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .selection-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preferences-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    height: auto;
+    min-height: 64px;
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .selection-container {
+    padding: 24px 16px;
+  }
+
+  .selection-page-header h1 {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .selection-page-header p {
+    font-size: 0.9rem;
+  }
+
+  .user-profile-summary span,
+  .nav-brand-sub {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 12px;
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  .selection-footer {
+    margin-top: 32px;
+    padding: 28px 16px;
+  }
+
+  .selection-footer-inner,
+  .faculty-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .faculty-pagination,
+  .pagination-controls {
+    width: 100%;
+  }
+
+  .pagination-controls .btn {
+    flex: 1;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  .faculty-card {
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .faculty-table,
+  .faculty-table tbody,
+  .faculty-table tr,
+  .faculty-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .faculty-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .faculty-table tr {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 16px 64px 16px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faculty-table td {
+    padding: 6px 0;
+    border: 0;
+  }
+
+  .faculty-table td:last-child {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    width: auto;
+    padding: 0;
+  }
+
+  .availability-wrap {
+    width: 100%;
+  }
+
+  .preferences-card {
+    padding: 18px;
+  }
+
+  .selection-footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-brand-text {
+    display: none;
+  }
+
+  .selection-container {
+    padding-inline: 12px;
+  }
 }
 
 .checkbox-label {

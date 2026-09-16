@@ -50,7 +50,7 @@
       <span class="active">Select Supervisor</span>
     </div>
 
-    <div class="page-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+    <div class="page-header selection-page-header">
       <div>
         <h1>Supervisor Selection & Ranking</h1>
         <p>Browse available faculty members and rank your top 5 preferences for your final year project supervision.</p>
@@ -221,9 +221,9 @@
               </tr>
             </tbody>
           </table>
-          <div style="padding: 16px 20px; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+          <div class="faculty-pagination">
             <span class="text-sm text-muted">Showing 1 to 4 of 24 results</span>
-            <div style="display: flex; gap: 8px;">
+            <div class="pagination-controls">
                <button class="btn btn-outline" style="padding: 4px 8px;" disabled>&lt;</button>
                <button class="btn btn-accent" style="padding: 4px 12px;">1</button>
                <button class="btn btn-outline" style="padding: 4px 12px;">2</button>
@@ -273,13 +273,13 @@
     </div>
   </main>
 
-  <footer style="margin-top: 60px; padding: 40px; border-top: 1px solid var(--color-border); background: #fff;">
-    <div class="selection-container" style="display: flex; justify-content: space-between; align-items: center; padding: 0;">
+  <footer class="selection-footer">
+    <div class="selection-container selection-footer-inner">
       <div>
         <p class="text-sm text-muted">&copy; 2026 The Catholic University of Eastern Africa (CUEA). All rights reserved.</p>
         <p class="text-xs text-muted" style="font-style: italic;">"Consecrate them in the Truth"</p>
       </div>
-      <div style="display: flex; gap: 24px;">
+      <div class="selection-footer-links">
         <a href="#" class="text-sm text-muted">Help & Support</a>
         <a href="#" class="text-sm text-muted">Privacy Policy</a>
       </div>
@@ -289,4 +289,3 @@
   <script src="js/supervisor-selection.js"></script>
 </body>
 </html>
-

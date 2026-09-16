@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`php/api/coordinator.php?action=get_overview_data&cohort_id=${cohortId}&supervisor_id=${supId}&milestone_status=${milestoneStatus}`);
             const data = await res.json();
             if (res.ok && data.data.length > 0) {
-                let html = '<table class="data-table"><tr><th>Student</th><th>Project Title</th><th>Current Milestone Status</th><th>Supervisor</th><th>Progress</th></tr>';
+                let html = '<table class="data-table" data-mobile-table="scroll"><tr><th>Student</th><th>Project Title</th><th>Current Milestone Status</th><th>Supervisor</th><th>Progress</th></tr>';
                 data.data.forEach(p => {
                     const supName = p.supervisor_name || '<em>Unassigned</em>';
                     const progColor = p.progress === 100 ? 'var(--color-success)' : 'var(--color-primary)';
@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let supOptions = '<option value="">Select Supervisor...</option>';
 
             if (res.ok && data.data.length > 0) {
-                let html = '<table class="data-table"><tr><th>Supervisor Name</th><th>Assigned Projects</th><th>Cohorts</th></tr>';
+                let html = '<table class="data-table" data-mobile-table="scroll"><tr><th>Supervisor Name</th><th>Assigned Projects</th><th>Cohorts</th></tr>';
                 data.data.forEach(s => {
                     const loadText = `${s.assigned_count}/${s.max_total_students} students${s.is_full ? ' (Full)' : ''}`;
                     html += `<tr>

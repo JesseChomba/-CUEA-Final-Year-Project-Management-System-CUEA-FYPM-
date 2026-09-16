@@ -670,17 +670,17 @@ tbody tr:hover {
     flex-direction: column;
   }
 
-  .sidebar {
+  .layout > .sidebar {
     width: 100%;
   }
 
-  .sidebar nav {
+  .layout > .sidebar nav {
     display: flex;
     overflow-x: auto;
     padding: 8px 0;
   }
 
-  .sidebar nav a {
+  .layout > .sidebar nav a {
     flex-direction: column;
     gap: 4px;
     padding: 8px 14px;
@@ -689,7 +689,7 @@ tbody tr:hover {
     font-size: .75rem;
   }
 
-  .sidebar nav a.active {
+  .layout > .sidebar nav a.active {
     border-left-color: transparent;
     border-bottom-color: var(--color-accent);
   }
@@ -704,7 +704,7 @@ tbody tr:hover {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .sidebar {
+  .layout > .sidebar {
     width: 200px;
   }
 }

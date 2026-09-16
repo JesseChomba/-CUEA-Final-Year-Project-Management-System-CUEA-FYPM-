@@ -74,7 +74,7 @@ require_once __DIR__ . '/includes/sidebar.php';
           <h2>My Supervisees</h2>
           <div style="margin-bottom: 14px;">
             <label style="display:block; font-weight:600; font-size:0.9rem; margin-bottom:6px;">Filter by Cohort</label>
-            <select id="superviseeCohortFilter" style="width:280px; padding:8px 10px; border:1px solid var(--color-border); border-radius:var(--radius-md);">
+            <select id="superviseeCohortFilter" class="responsive-filter-control">
               <option value="">All Cohorts</option>
               <!-- Populated by JS -->
             </select>
@@ -121,7 +121,7 @@ require_once __DIR__ . '/includes/sidebar.php';
                 <option value="">Loading cohorts...</option>
               </select>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="responsive-form-grid">
               <div class="form-group">
                 <label>Sub-Milestone Name</label>
                 <input type="text" id="sm_name" required>

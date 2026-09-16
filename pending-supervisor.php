@@ -58,6 +58,13 @@ if (!$state['has_pending_preferences']) {
       flex-wrap: wrap;
       margin-top: 24px;
     }
+    @media (max-width: 480px) {
+      .pending-shell { padding: 14px; }
+      .pending-card { padding: 24px 18px; }
+      .pending-card h1 { font-size: 1.35rem; }
+      .pending-actions { flex-direction: column; }
+      .pending-actions .btn { width: 100%; min-height: 44px; }
+    }
   </style>
 </head>
 <body>

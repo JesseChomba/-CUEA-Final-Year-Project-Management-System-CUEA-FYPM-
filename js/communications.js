@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.innerHTML = `<h3>Messages & Feedback</h3><p class="text-muted">No direct messages or feedback available.</p>`;
                 return;
             }
-            let html = `<h3>Messages & Feedback</h3><div style="margin-top: 15px; display: flex; flex-direction: column; gap: 15px;">`;
+            let html = `<h3>Messages & Feedback</h3><div class="record-list">`;
             feedback.forEach(f => {
                 html += `
                     <div style="padding: 15px; border: 1px solid var(--color-border); border-radius: 8px; background: #F9FAFB;">
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             });
             html += `</div>
-                <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;">
+                <div class="responsive-pagination">
                     <button class="btn btn-outline" id="messagesPrev" ${page <= 1 ? 'disabled' : ''}>Previous</button>
                     <span class="text-sm text-muted">Page ${json.data.page} of ${json.data.total_pages || 1}</span>
                     <button class="btn btn-outline" id="messagesNext" ${page >= (json.data.total_pages || 1) ? 'disabled' : ''}>Next</button>

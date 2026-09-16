@@ -19,6 +19,17 @@ require_once __DIR__ . '/includes/sidebar.php';
     .layout-toggle button.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
     #calendarView { display: none; background: #fff; padding: 20px; border-radius: 8px; box-shadow: var(--shadow-sm); }
     #listView { display: block; }
+    .schedule-list { margin-top: 15px; display: flex; flex-direction: column; gap: 10px; }
+    .schedule-item { padding: 15px; background: #fff; border-radius: 4px; box-shadow: var(--shadow-sm); }
+    .schedule-item-head { display: flex; justify-content: space-between; gap: 12px; }
+    @media (max-width: 640px) {
+      #calendarView { padding: 10px; }
+      .schedule-item-head { flex-direction: column; }
+      .fc .fc-toolbar { align-items: stretch; flex-direction: column; gap: 10px; }
+      .fc .fc-toolbar-chunk { display: flex; justify-content: center; }
+      .fc .fc-toolbar-title { font-size: 1.1rem; }
+      .fc .fc-button { min-height: 40px; padding: .35em .55em; }
+    }
   </style>
   </head>
 <body class="dashboard-layout">

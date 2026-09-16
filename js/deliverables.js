@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 container.innerHTML = `<h3>Milestones</h3><p class="text-muted">No milestones found.</p>`;
                 return;
             }
-            let html = `<h3>Milestones</h3><div style="margin-top: 15px; display: flex; flex-direction: column; gap: 15px;">`;
+            let html = `<h3>Milestones</h3><div class="record-list">`;
             milestones.forEach(m => {
                 const status = (m.submission_status || 'Pending').replace(/_/g, ' ').toUpperCase();
                 const statusClass = approvedStatuses().includes(m.submission_status) ? 'status-approved' : 'status-pending';
                 html += `
                     <div class="milestone-submit-card ${statusClass}" style="padding: 15px; border: 1px solid var(--color-border); border-radius: 8px;">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <div class="card-header-row">
                             <h4 style="margin: 0;">${escapeHtml(m.name)}</h4>
                             <span class="status-pill" style="font-size: 0.8rem; padding: 4px 8px; border-radius: 4px;">${status}</span>
                         </div>

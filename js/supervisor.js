@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             const recent = json.data.recent_files || [];
             const metrics = json.data.cohort_metrics || [];
             container.innerHTML = `
-                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;">
+                <div class="responsive-metrics-grid">
                     <div class="metric-card"><strong>${json.data.pending_actions || 0}</strong><span>Pending Actions</span></div>
                     <div class="metric-card"><strong>${recent.length}</strong><span>Recent Files</span></div>
                     <div class="metric-card"><strong>${metrics.length}</strong><span>Assigned Cohorts</span></div>
                 </div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px;">
+                <div class="responsive-form-grid" style="margin-top:16px;">
                     <div>
                         <h3 style="font-size:1rem;margin-bottom:8px;">Recent Files</h3>
                         ${recent.length ? recent.map(f => `
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         ` : ''}
                         
                         <form class="grading-form" data-sub-id="${sub.sub_id}">
-                            <div style="display:grid; grid-template-columns:1fr 2fr; gap:16px;">
+                            <div class="responsive-review-grid">
                                 <div class="form-group">
                                     <label>Status</label>
                                     <select name="status" class="status-select">

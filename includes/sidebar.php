@@ -102,7 +102,19 @@ function renderSidebar(array $user, string $activeKey = ''): void {
         unset($item);
     }
     ?>
-    <aside class="sidebar">
+    <button class="mobile-nav-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="appSidebar"
+            aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <aside class="sidebar" id="appSidebar" aria-label="Primary navigation" tabindex="-1">
       <div class="sidebar-header">
         <div class="sidebar-logo">
           <img src="cuea_logo.png/screen.png" alt="CUEA Logo" onerror="this.style.display='none'">
@@ -142,5 +154,6 @@ function renderSidebar(array $user, string $activeKey = ''): void {
         </a>
       </div>
     </aside>
+    <div class="sidebar-backdrop" aria-hidden="true"></div>
     <?php
 }

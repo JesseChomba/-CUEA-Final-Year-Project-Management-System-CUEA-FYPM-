@@ -56,7 +56,7 @@ require_once __DIR__ . '/includes/sidebar.php';
       <section id="tab-overview" class="tab-content active">
         <div id="eagleMetrics" class="admin-card">
           <h2>Coordinator Metrics</h2>
-          <div id="metricsGrid" style="display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:16px; margin-top:16px;">
+          <div id="metricsGrid" class="responsive-metrics-grid" style="margin-top:16px;">
             <p class="text-muted">Loading metrics...</p>
           </div>
         </div>
@@ -68,7 +68,7 @@ require_once __DIR__ . '/includes/sidebar.php';
           <h2>System Overview</h2>
           <p class="text-muted">Select a cohort and supervisor to inspect student milestone progress.</p>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px;">
+          <div class="responsive-filter-grid" style="margin-top: 16px;">
             <div class="form-group">
               <label>Filter by Cohort</label>
               <select id="overviewCohortFilter">
@@ -109,7 +109,7 @@ require_once __DIR__ . '/includes/sidebar.php';
         <div class="admin-card">
           <h2>Create New User</h2>
           <form id="createUserForm">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="responsive-form-grid">
               <div class="form-group">
                 <label>Full Name</label>
                 <input type="text" id="cu_name" required>
@@ -176,7 +176,7 @@ require_once __DIR__ . '/includes/sidebar.php';
         <div class="admin-card">
           <h2>Create New Cohort</h2>
           <form id="createCohortForm">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="responsive-form-grid">
               <div class="form-group">
                 <label>Cohort Name</label>
                 <input type="text" id="cc_name" placeholder="e.g. Class of 2025" required>
@@ -216,7 +216,7 @@ require_once __DIR__ . '/includes/sidebar.php';
               <label>Select Cohort</label>
               <select id="cm_cohort" required></select>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="responsive-form-grid">
               <div class="form-group">
                 <label>Milestone Name</label>
                 <input type="text" id="cm_name" required>
@@ -249,7 +249,7 @@ require_once __DIR__ . '/includes/sidebar.php';
         </div>
         <div class="admin-card">
           <h2>Milestone Templates & Defense</h2>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="responsive-form-grid">
             <form id="templateCreateForm">
               <h3>Create Template</h3>
               <div class="form-group">
@@ -305,7 +305,7 @@ require_once __DIR__ . '/includes/sidebar.php';
 
         <div class="admin-card">
           <h2>Supervisor Cohort Access</h2>
-          <form id="supervisorCohortForm" style="display:grid; grid-template-columns:1fr 1fr auto; gap:12px; align-items:end;">
+          <form id="supervisorCohortForm" class="responsive-action-grid">
             <div class="form-group">
               <label>Supervisor</label>
               <select id="scSupervisor"></select>
@@ -362,6 +362,5 @@ require_once __DIR__ . '/includes/sidebar.php';
   <script src="js/sidebar.js"></script>
 </body>
 </html>
-
 
 

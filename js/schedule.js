@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (milestones.length === 0) {
                 container.innerHTML = `<h3>Upcoming Deadlines & Meetings</h3><p class="text-muted">No schedule items found.</p>`;
             } else {
-                let html = `<h3>Upcoming Deadlines & Meetings</h3><div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">`;
+                let html = `<h3>Upcoming Deadlines & Meetings</h3><div class="schedule-list">`;
                 milestones.forEach(m => {
                     const isCompleted = ['supervisor_approved', 'coordinator_approved', 'approved'].includes(m.submission_status);
                     const color = isCompleted ? 'var(--color-success)' : (m.submission_status === 'submitted' ? 'var(--color-primary)' : '#F59E0B');
                     html += `
-                        <div style="padding: 15px; border-left: 4px solid ${color}; background: #FFF; border-radius: 4px; box-shadow: var(--shadow-sm);">
-                            <div style="display: flex; justify-content: space-between;">
+                        <div class="schedule-item" style="border-left: 4px solid ${color};">
+                            <div class="schedule-item-head">
                                 <strong>${m.name}</strong>
                                 <span class="text-sm text-muted">${new Date(m.due_date).toLocaleDateString()}</span>
                             </div>
@@ -70,15 +70,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 };
             });
 
+            const compactCalendar = window.matchMedia('(max-width: 640px)').matches;
             calendarInstance = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
+                initialView: compactCalendar ? 'listMonth' : 'dayGridMonth',
                 events: events,
                 headerToolbar: {
-                    left: 'prev,next today',
+                    left: compactCalendar ? 'prev,next' : 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,listWeek'
+                    right: compactCalendar ? 'listMonth,dayGridMonth' : 'dayGridMonth,timeGridWeek,listWeek'
                 },
-                height: 600
+                height: compactCalendar ? 'auto' : 600
             });
             // We don't render it here, wait until toggle to prevent sizing bugs
         }
